@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { registerUser } from '../services/api';
+import { loginUser } from '../services/api';
 import { useNavigate } from 'react-router-dom';
 
-const Register = () => {
-    const [form, setForm] = useState({ name: '', email: '', password: '' });
+const Login = () => {
+    const [form, setForm] = useState({ email: '', password: '' });
     const navigate = useNavigate();
 
     const handleChange = (e) =>
@@ -12,11 +12,11 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await registerUser(form);
+            const res = await loginUser(form);
             localStorage.setItem('token', res.data.token);
             navigate('/dashboard');
         } catch (err) {
-            alert(err.response?.data?.msg || 'Registration failed');
+            alert(err.response?.data?.msg || 'Login failed');
         }
     };
 
@@ -24,24 +24,12 @@ const Register = () => {
         <div className="container page">
             <div className="auth-wrap card">
                 <div className="card-body">
-                    <h2 className="auth-title">Create Account</h2>
+                    <h2 className="auth-title">Welcome Back</h2>
                     <p className="auth-sub">
-                        Register to report and track civic issues
+                        Login to manage and track your complaints
                     </p>
 
                     <form className="form" onSubmit={handleSubmit}>
-                        <div className="field">
-                            <span className="label">Name</span>
-                            <input
-                                className="input"
-                                type="text"
-                                name="name"
-                                placeholder="Your full name"
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
                         <div className="field">
                             <span className="label">Email</span>
                             <input
@@ -60,14 +48,14 @@ const Register = () => {
                                 className="input"
                                 type="password"
                                 name="password"
-                                placeholder="Create a strong password"
+                                placeholder="••••••••"
                                 onChange={handleChange}
                                 required
                             />
                         </div>
 
                         <button type="submit" className="btn btn-primary">
-                            Register
+                            Login
                         </button>
                     </form>
                 </div>
@@ -76,4 +64,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;

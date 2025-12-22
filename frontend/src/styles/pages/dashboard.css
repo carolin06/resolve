@@ -1,0 +1,23 @@
+.hero {
+    padding: 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(110, 168, 255, 0.14), rgba(155, 123, 255, 0.10));
+}
+
+.hero h2 {
+    margin: 0 0 8px;
+    font-size: 26px;
+}
+
+.hero p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.actions {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}

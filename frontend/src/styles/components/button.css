@@ -1,0 +1,37 @@
+.btn {
+    border: 0;
+    cursor: pointer;
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-weight: 800;
+    transition: transform 0.06s ease, filter 0.2s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--brand), var(--brand2));
+    color: #0b1020;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.05);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-ghost:hover {
+    background: var(--panel);
+}
+
+.btn-danger {
+    background: rgba(255, 90, 122, 0.18);
+    border: 1px solid rgba(255, 90, 122, 0.35);
+    color: rgba(255, 90, 122, 0.95);
+}

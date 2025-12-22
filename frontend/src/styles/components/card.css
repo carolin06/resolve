@@ -1,0 +1,102 @@
+.ticket {
+    padding: 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+}
+
+.ticket-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+}
+
+.badge.open {
+    border-color: rgba(255, 200, 87, 0.35);
+    color: rgba(255, 200, 87, 0.95);
+}
+
+.badge.progress {
+    border-color: rgba(110, 168, 255, 0.35);
+    color: rgba(110, 168, 255, 0.95);
+}
+
+.badge.resolved {
+    border-color: rgba(59, 231, 165, 0.35);
+    color: rgba(59, 231, 165, 0.95);
+}
+
+.ticket-title {
+    font-weight: 800;
+    margin: 0 0 6px;
+}
+
+.ticket-desc {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.ticket-meta {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.ticket-img {
+    margin-top: 12px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    border: 1px solid var(--border);
+}
+
+.badge-OPEN {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.badge-IN_PROGRESS {
+    background: rgba(110, 168, 255, 0.16);
+}
+
+.badge-RESOLVED {
+    background: rgba(120, 255, 170, 0.14);
+}

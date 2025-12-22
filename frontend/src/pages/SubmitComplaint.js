@@ -24,20 +24,77 @@ const SubmitComplaint = () => {
             alert('Complaint submitted');
             navigate('/complaints');
         } catch (err) {
-            alert(err.response.data.msg || 'Error');
+            alert(err.response?.data?.msg || 'Error');
         }
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-4 border rounded">
-            <h2 className="text-xl font-bold mb-4">Submit Complaint</h2>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-                <input type="text" name="type" placeholder="Type of issue" onChange={handleChange} required />
-                <input type="text" name="location" placeholder="Location" onChange={handleChange} />
-                <textarea name="description" placeholder="Description" onChange={handleChange} required />
-                <input type="file" onChange={handleImage} />
-                <button type="submit" className="bg-green-600 text-white py-2 rounded">Submit</button>
-            </form>
+        <div className="container page">
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="page-title">Submit Complaint</h2>
+                    <p className="muted" style={{ marginTop: 0 }}>
+                        Report a civic issue (roads, water, garbage) with location and optional photo.
+                    </p>
+
+                    <form className="form form-grid" onSubmit={handleSubmit}>
+                        <div className="field">
+                            <span className="label">Issue Type</span>
+                            <input
+                                className="input"
+                                type="text"
+                                name="type"
+                                placeholder="Road damage / Water leakage / Garbage not collected"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="field">
+                            <span className="label">Location</span>
+                            <input
+                                className="input"
+                                type="text"
+                                name="location"
+                                placeholder="Sector A, near Caravan 12"
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        <div className="field field-span-2">
+                            <span className="label">Description</span>
+                            <textarea
+                                className="textarea"
+                                name="description"
+                                placeholder="Describe the issue clearly..."
+                                onChange={handleChange}
+                                required
+                            />
+                            <span className="helper">
+                                Tip: include landmarks + urgency (example: “water leaking near food stalls”).
+                            </span>
+                        </div>
+
+                        <div className="field">
+                            <span className="label">Photo (optional)</span>
+                            <input className="input file" type="file" onChange={handleImage} />
+                        </div>
+
+                        <div className="field actions-row">
+                            <button type="submit" className="btn btn-primary">
+                                Submit
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-ghost"
+                                onClick={() => navigate('/complaints')}
+                            >
+                                View Complaints
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };

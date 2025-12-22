@@ -1,0 +1,15 @@
+.auth-wrap {
+    max-width: 440px;
+    margin: 40px auto;
+}
+
+.auth-title {
+    font-size: 26px;
+    font-weight: 900;
+    margin: 0 0 6px;
+}
+
+.auth-sub {
+    margin: 0 0 16px;
+    color: var(--muted);
+}

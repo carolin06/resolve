@@ -4,25 +4,35 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const token = localStorage.getItem('token');
 
-    const handleLogout = () => {
+    const logout = () => {
         localStorage.removeItem('token');
         window.location.href = '/login';
     };
 
     return (
-        <nav className="bg-blue-600 p-4 text-white flex justify-between">
-            <h1 className="font-bold">Circus Grievance System</h1>
-            <div>
-                {token ? (
-                    <button onClick={handleLogout} className="bg-red-500 px-3 py-1 rounded">Logout</button>
-                ) : (
-                    <>
-                        <Link to="/login" className="mr-2">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </>
-                )}
+        <div className="navbar">
+            <div className="navbar-inner">
+                <div className="brand">
+                    <div className="brand-badge" />
+                    Circus Grievance System
+                </div>
+
+                <div className="navlinks">
+                    {!token ? (
+                        <>
+                            <Link className="navlink" to="/login">Login</Link>
+                            <Link className="navlink" to="/register">Register</Link>
+                        </>
+                    ) : (
+                        <>
+                            <Link className="navlink" to="/dashboard">Dashboard</Link>
+                            <Link className="navlink" to="/complaints">Complaints</Link>
+                            <button className="btn btn-danger" onClick={logout}>Logout</button>
+                        </>
+                    )}
+                </div>
             </div>
-        </nav>
+        </div>
     );
 };
 

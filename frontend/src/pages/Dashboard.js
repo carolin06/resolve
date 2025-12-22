@@ -3,14 +3,27 @@ import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div className="max-w-4xl mx-auto mt-10 p-4">
-            <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
-            <div className="flex gap-4">
-                <Link to="/submit-complaint" className="bg-green-500 text-white px-4 py-2 rounded">Submit Complaint</Link>
-                <Link to="/complaints" className="bg-blue-500 text-white px-4 py-2 rounded">View Complaints</Link>
+        <div className="container page">
+            <div className="hero card">
+                <h2>Welcome to the Grievance Dashboard</h2>
+                <p>
+                    Report issues in your area and track their resolution status in real
+                    time.
+                </p>
+
+                <div className="actions">
+                    <Link to="/submit-complaint" className="btn btn-primary">
+                        Submit Complaint
+                    </Link>
+
+                    <Link to="/complaints" className="btn btn-ghost">
+                        View Complaints
+                    </Link>
+                </div>
             </div>
         </div>
     );
 };
 
 export default Dashboard;
+

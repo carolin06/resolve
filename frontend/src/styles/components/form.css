@@ -1,0 +1,49 @@
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    /* ⬅️ was 12px */
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* ⬅️ more vertical space */
+}
+
+
+.label {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.input,
+.textarea,
+.select {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    padding: 12px 12px;
+    outline: none;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    border-color: rgba(110, 168, 255, 0.65);
+    box-shadow: 0 0 0 3px rgba(110, 168, 255, 0.18);
+}
+
+.textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.helper {
+    font-size: 12px;
+    color: var(--muted);
+}

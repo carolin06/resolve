@@ -14,4 +14,11 @@ export const getComplaints = (token) => API.get('/complaints', {
     headers: { 'x-auth-token': token }
 });
 
+// Staff/Admin
+export const getAllComplaints = (token) =>
+    API.get('/complaints/all', { headers: { 'x-auth-token': token } });
+
+export const updateComplaintStatus = (id, status, token) =>
+    API.patch(`/complaints/${id}/status`, { status }, { headers: { 'x-auth-token': token } });
+
 export default API;
